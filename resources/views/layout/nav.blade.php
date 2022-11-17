@@ -6,7 +6,7 @@
             <!--begin:Menu item-->
             <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link active" href="">
+                <a class="menu-link {{ request()->is('/') ? 'menu-link active' : '' }}" href="{{url('/')}}">
                     <span class="menu-icon">
                         <i class="bi bi-grid fs-3"></i>
                     </span>
@@ -27,7 +27,7 @@
             <!--begin:Menu item-->
             <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="blank">
+                <a class="menu-link {{ request()->is('calendar') ? 'menu-link active' : '' }}" href="{{url('/calendar')}}">
                     <span class="menu-icon">
                         <i class="bi bi-calendar3-event fs-3"></i>
                     </span>
