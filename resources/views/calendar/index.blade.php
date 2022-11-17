@@ -37,8 +37,8 @@
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            events: '/',
-            selectable: false,
+            events: '/calendar',
+            selectable: true,
             selectHelper: true,
             select: function(start, end, allDay) {
                 var title = prompt('Event Title:');
@@ -49,7 +49,7 @@
                     var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
 
                     $.ajax({
-                        url: "/full-calender/action",
+                        url: "/calendar/action",
                         type: "POST",
                         data: {
                             title: title,
@@ -71,7 +71,7 @@
                 var title = event.title;
                 var id = event.id;
                 $.ajax({
-                    url: "/full-calender/action",
+                    url: "/calendar/action",
                     type: "POST",
                     data: {
                         title: title,
@@ -92,7 +92,7 @@
                 var title = event.title;
                 var id = event.id;
                 $.ajax({
-                    url: "/full-calender/action",
+                    url: "/calendar/action",
                     type: "POST",
                     data: {
                         title: title,
@@ -112,7 +112,7 @@
                 if (confirm("Are you sure you want to remove it?")) {
                     var id = event.id;
                     $.ajax({
-                        url: "/full-calender/action",
+                        url: "/calendar/action",
                         type: "POST",
                         data: {
                             id: id,
